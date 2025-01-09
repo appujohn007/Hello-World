@@ -1,0 +1,6 @@
+[build]
+  command = "pip install -r requirements.txt && uvicorn .main:app --host=0.0.0.0 --port=8888"
+  publish = "public"  # Optional if you have static files
+
+[functions]
+  directory = "netlify/functions"
