@@ -1,8 +1,5 @@
 from fastapi import FastAPI
 import uvicorn
-import subprocess
-import os
-
 
 app = FastAPI()
 
@@ -10,6 +7,6 @@ app = FastAPI()
 async def read_hello():
     return {"message": "Hello, World!"}
 
-
 if __name__ == "__main__":
-    subprocess.Popen(["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"])
+    # Use uvicorn.run instead of subprocess to keep the process alive
+    uvicorn.run(app, host="0.0.0.0", port=8000)
